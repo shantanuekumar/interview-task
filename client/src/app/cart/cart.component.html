@@ -1,0 +1,24 @@
+<ul *ngIf="auth.isLoggedIn() || Products" class="clearfix">
+    <li #product *ngFor="let p of Products" >
+      <div *ngIf="p">
+      <img id="left" src={{p.image}} >
+
+        <div id="details">
+        <p>{{p.label}}</p>
+        <p id="price">₹{{p.price}}</p>
+        <button (click)="RemoveProduct(p) || product.remove()"  class="update_cart">remove</button>
+        </div>
+        
+      </div>
+    </li>
+    <div id="a2cart">
+      
+        <button *ngIf="Products" routerLink="/payments" >Proceed to Checkout</button>
+    </div>
+  </ul>
+
+
+
+
+  
+  

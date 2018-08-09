@@ -1,0 +1,345 @@
+
+    <!-- <header>
+      <h2 class="header"><a routerLink="/">medicana</a></h2>
+        <div class="center"><input type="text" placeholder="Search for products"><button id="search-icon"><img id="search" src="./assets/images/search.png"></button></div>
+        <ul class="right">
+          <li #myElement (click)="myElement.remove() || cont.remove()"><a routerLink='/cart' ><img id="cart" src="./assets/images/bag.png"></a></li> 
+          <li> <a routerLink="/login"><img id="user" src="./assets/images/user.png"></a></li>
+        </ul>
+    </header>
+    <content #cont >
+     
+      <ul id="list">
+        <li><a href="#">PERSONAL CARE</a>
+        <ul id="inner-list">
+            <li><a href="#">SKIN CARE</a></li>
+            <li><a href="#">BATH & BODY</a></li>
+            <li><a href="#">ADULT CARE</a></li>
+            <li><a href="#">FEMININE CARE</a></li>
+            <li><a routerLink="/products">HAND AND FOOT CARE</a></li>
+        </ul>
+        </li>
+        <li><a href="#">BEAUTY</a>
+        <ul id="inner-list">
+          <li><a href="#">BEAUTY ACCESSORIES</a></li>
+          <li><a href="#">MAKE UP</a></li>
+        </ul>
+        </li>
+        <li><a href="#">MOM & BABY</a>
+        <ul id="inner-list">
+          <li><a href="#">BABY DIAPERS</a></li>
+          <li><a href="#">FEEDING & NURSING</a></li>
+          <li><a href="#">GIFTS & ACCESSORIES</a></li>
+          <li><a href="#">HEALTH & SAFETY</a></li>
+          <li><a href="#">NUTRITION</a></li>
+          <li><a href="#">PERSONAL CARE</a></li>
+        </ul>
+        </li>
+        <li><a href="#">NUTRITION</a>
+        <ul id="inner-list">
+          <li><a href="#">FOODS & DRINKS</a></li>
+          <li><a href="#">SEXUAL WELLNESS</a></li>
+          <li><a href="#">SPECIAL NUTRITION NEEDS</a></li>
+          <li><a href="#">SPORTS NUTRITION</a></li>
+          <li><a href="#">VITAMINS & SUPPLEMENTS</a></li>
+        </ul>
+        </li>
+        <li><a href="#">HEALTH CARE</a>
+        <ul id="inner-list">
+          <li><a href="#">DIABETES MANAGEMENT</a></li>
+          <li><a href="#">HEALTH ACCESSORIES</a></li>
+          <li><a href="#">HOME HEALTHCARE</a></li>
+          <li><a href="#">HOME TESTING KITS</a></li>
+          <li><a href="#">WEIGHT MANAGEMENT</a></li>
+        </ul>
+        </li>
+        <li><a href="#">SPECIAL OFFER</a></li>
+        <li><a href="#">HOLLAND & BARRETT</a>
+          <ul id="inner-list">
+              <li><a href="#">FOOD & DRINK</a></li>
+              <li><a href="#">SPORTS NUTRITION</a></li>
+              <li><a href="#">VITAMINS & SUPPLEMENTS</a></li>
+              <li><a href="#">WEIGHT MANAGEMENT</a></li>
+            </ul>
+        </li>
+        <li><a href="#">MEDICANA PRODUCTS</a>
+          <ul id="inner-list">
+              <li><a href="#">BABY & MOTHER</a></li>
+              <li><a href="#">BEAUTY</a></li>
+              <li><a href="#">HEALTHCARE & DEVICES</a></li>
+              <li><a href="#">NUTRITION</a></li>
+              <li><a href="#">PERSONAL CARE</a></li>
+            </ul>
+        </li>
+        <li><a href="#">SHOP BY BRAND</a></li>
+      </ul>
+    </content>  
+    <footer></footer>   
+   -->
+
+   <!-- <section id="jinglebol-signup">
+    <div class="container" [class.log-in]="login" [class.active]="btnactive">
+      <div class="box"></div>
+      <div class="container-forms">
+        <div class="container-info">
+          <div class="info-item">
+            <div class="table">
+              <div class="table-cell">
+                <p>
+                  Have an account?
+                </p>
+                <div class="btn" (click)=(loginSignup())>
+                  Log in
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="table">
+              <div class="table-cell">
+                <p>
+                  Don't have an account? 
+                </p>
+                <div class="btn" (click)=(loginSignup())>
+                  Sign up
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-form">
+          <form>
+              <div class="form-item log-in">
+            <div class="table">
+              <div class="table-cell">
+                  <div class="user-img">
+                      <img src="./assets/images/user1.png">
+                  </div>
+                  <div class="user">
+                      <img src="./assets/images/user.png" alt="user">
+                      <input name="Username" placeholder="Username" type="text" />
+                  </div>
+                  <div class="psd">
+                      <img src="./assets/images/lock.png">
+                    <input name="Password" placeholder="Password" type="Password" />
+                  </div>
+                <button type="submit" class="btn" (click)=(submit())>
+                  Login
+                </button>
+              </div>
+            </div>
+          </div>
+          </form>
+          <form>
+              <div class="form-item sign-up">
+            <div class="table">
+              <div class="table-cell">
+                  <div class="user-img1">
+                      <img src="./assets/images/user1.png">
+                  </div>
+                  <div class="name">
+                      <img src="./assets/images/edit.png" alt="user">
+                    <input name="fullName" placeholder="Full Name" type="text" />
+                  </div>
+                <div class="user">
+                      <img src="./assets/images/user.png" alt="user">
+                      <input name="Username" placeholder="Username" type="text" />
+                  </div>
+                  <div class="email">
+                      <img src="./assets/images/envelope.png" alt="user">
+                    <input name="email" placeholder="Email" type="text" />
+                  </div>
+                  <div class="psd">
+                      <img src="./assets/images/lock.png" alt="user">
+                      <input name="Password" placeholder="Password" type="Password" />
+                  </div>
+                <button type="submit" class="btn" (click)=(submit())>
+                  Sign up
+                </button>
+              </div>
+            </div>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</section>
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="jinglebol-signup">
+  <div class="container" [class.log-in]="login" [class.active]="btnactive">
+     
+    <div class="box"></div>
+    <div class="container-forms">
+      <div class="container-info">
+        <div class="info-item">
+          <div class="table">
+            <div class="table-cell">
+              <p>
+                Have an account?
+              </p>
+              <div class="btn" (click)=(loginSignup())>
+                Log in
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="table">
+            <div class="table-cell">
+              <p>
+                Don't have an account? 
+              </p>
+              <div class="btn" (click)=(loginSignup())>
+                Sign up
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-form">
+        <form #loginform="ngForm" (submit)="signin()">
+           
+          <div class="form-item log-in">
+          <div class="table">
+            <div class="table-cell">
+              <div class="user-img">
+                <img src="./assets/images/user1.png">
+              </div>
+
+              <div *ngIf="" class="alert alert-danger">invalid username or password</div>
+              <div class="user">
+                <img src="./assets/images/user.png" alt="user">
+                <input name="username"   placeholder="Username" type="text" [(ngModel)]="loginCredentials.username" #username="ngModel" required/>
+               
+               
+                <div *ngIf="username.touched" >
+                <div [hidden] = "!username.hasError('required')"  class="alert alert-danger">username is required</div>
+                <!-- <div [hidden] = "!username.hasError('pattern')" class="alert alert-danger">only alphabets,numbers,_,.and @ allowed</div>                -->
+                </div>
+              </div>
+              <div class="psd">
+                <img src="./assets/images/lock.png">
+                <input name="password" placeholder="Password"  minlength="8" type="Password" [(ngModel)]="loginCredentials.password" #password="ngModel" required/>
+                <div *ngIf="password.touched" >
+
+                    <div [hidden]="!password.hasError('required')" class="alert alert-danger">password is required</div>
+                    <!-- <div [hidden]="!password.hasError('pattern')" class="alert alert-danger">only alphabets,numbers,_ and @ allowed</div> -->
+                    <div [hidden]="!password.hasError('minlength')" class="alert alert-danger">password should be min 8 characters</div>
+                    
+                </div>
+              </div>
+              <button type="submit" class="btn" [disabled]="loginform.invalid" (click)=(submit())>              
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+        </form>
+        <form #registerform="ngForm" (submit)="register()">
+          <div class="form-item sign-up">
+          <div class="table">
+            <div class="table-cell">
+              <div class="welcome" #welcome>
+              <div class="user-img1">
+                <img src="./assets/images/user1.png">
+              </div>	
+              <div class="user">
+                <img src="./assets/images/user.png" alt="user">
+                <input name="Username" placeholder="Username" type="text" [(ngModel)]="registerCredentials.username" #uname="ngModel" required/>
+                <div *ngIf="uname.touched" >
+                <div [hidden] = "!uname.hasError('required')"  class="alert alert-danger">username is required</div>
+                </div>
+              </div>
+              <div class="email">
+                <img src="./assets/images/envelope.png" alt="user">
+                <input name="email" placeholder="Email" type="text" [(ngModel)]="registerCredentials.email"  #email="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required/>
+                <div *ngIf="email.touched" >
+                    <div [hidden] = "!email.hasError('required')"  class="alert alert-danger">email is required</div>
+                    <div [hidden] = "!email.hasError('pattern')"  class="alert alert-danger"> Invalid email</div>
+                </div>
+              </div>
+              <div class="psd">
+                <img src="./assets/images/lock.png" alt="user">
+                <input name="Password" placeholder="Password" type="Password" minlength="8" [(ngModel)]="registerCredentials.password" #passwd="ngModel" required/>
+                <div *ngIf="passwd.touched" >
+                    <div [hidden] = "!passwd.hasError('required')"  class="alert alert-danger">password is required</div>
+                    <div [hidden] = "!passwd.hasError('minlength')"  class="alert alert-danger">password should be 8 characters</div>
+                </div>
+              </div>
+              <button type="button" [disabled]="uname.hasError('required') || email.hasError('required') || email.hasError('pattern') || passwd.hasError('required') || passwd.hasError('minlength')" class="btn1" (click)=(alterDisplay())>
+                Next
+              </button>
+              </div>
+              <div class="next" #next>
+                <div class="left" (click)=(nextForm())>
+                  <img src="./assets/images/left.png">
+                </div>
+                <div class="user-img1">
+                  <img src="./assets/images/user1.png">
+                </div>
+                <div class="category">
+                  <label for="Individual" class="check">
+                   
+                  <input type="radio" id="Individual" name="category" value="individual"  (click)=(selectedCategory()) [(ngModel)]="registerCredentials.category" [checked]="category == 'individual'" required>
+                  <span class="checkmark"></span>Individual</label>
+                  <label for="Brand" class="check">
+                  <input type="radio" id="Brand" name="category" value="brand" (click)=(selectedCategory()) [(ngModel)]="registerCredentials.category"  required>
+                  <span class="checkmark"></span>
+
+                  
+                  Brand</label>                 
+                  
+                                
+                </div>
+                <div class="name" *ngIf="category == 'individual'">
+                  <img src="./assets/images/edit.png" alt="user">
+                  <input name="fullname" placeholder="Full Name" type="text" [(ngModel)]="registerCredentials.name" #fname="ngModel" required/>
+                  <div *ngIf="fname.touched">
+                    <div [hidden]="!fname.hasError('required')" class="alert alert-danger">full name required</div>
+                  </div>
+                </div>
+                <div class="name"  *ngIf="category == 'brand'">
+                <img src="./assets/images/edit.png" alt="user">
+                <input type="text" name="Brand name" placeholder="brand name" [(ngModel)]="registerCredentials.name" #bname="ngModel" required>
+                <div *ngIf="bname.touched">
+                    <div [hidden]="!bname.hasError('required')" class="alert alert-danger">brand name required</div>
+                </div> 
+                </div>
+                <div class="name">
+                  <img src="./assets/images/phone.png" alt="user">
+                  <input appNumber name="Phone" placeholder="Number" [(ngModel)]="registerCredentials.phone" pattern="[0-9]*" minlength="10" maxlength="10" #phone="ngModel" required=""/>
+                 
+                  <div *ngIf="phone.touched">
+                      <div [hidden]="!phone.hasError('required')" class="alert alert-danger">phone no. is required </div>
+                      <div [hidden]="!phone.hasError('pattern')" class="alert alert-danger">invalid phone no.</div>
+                      <div [hidden]="!phone.hasError('minlength')" class="alert alert-danger">phone number should be 10 digits long</div>
+                  </div>
+                </div>
+                <button type="submit" [disabled]="registerform.invalid" class="btn" (click)=(submit())>
+                Sign up
+              </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

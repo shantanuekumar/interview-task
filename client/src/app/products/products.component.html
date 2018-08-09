@@ -1,0 +1,13 @@
+<ul id="products">
+
+<li ng-if="id==5" >
+ <h3>HAND AND FOOT CARE</h3>
+ <div id="handnfootcare">
+ <div  *ngFor="let product of products">
+    <a routerLink="/product/{{product.label}}"><img src={{product.image}}></a>
+    <a routerLink="/product/{{product.label}}">{{product.label}}</a>
+    <p><b>₹{{product.price}}</b></p>
+ </div>
+</div> 
+</li>
+</ul>   

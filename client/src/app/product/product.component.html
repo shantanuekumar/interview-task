@@ -1,0 +1,29 @@
+<!-- id="products" -->
+<ul >
+
+   
+    
+     <div  id="product">
+     <div *ngFor="let p of prod" >
+     <div *ngIf="p.label==label">
+        <img id="left" src={{p.image}}>
+        
+        <div id="details">
+        <p>{{p.label}}</p>
+        <span>By <a href="#">{{p.brand}}</a></span>
+        <p id="price">₹{{p.price}}</p>
+        </div>
+        <div id="a2cart">
+        <button routerLink="/cart" (click)="AddProduct(p)">ADD TO CART</button>
+        <button>BUY NOW</button>
+        </div>
+    
+        
+     </div>
+     
+    </div>
+    
+    </div> 
+     
+    
+</ul>
