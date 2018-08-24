@@ -1,0 +1,32 @@
+
+<form action="" class="well" (submit)="addpost($event)" >
+    <div class="form-group">
+      <div class="panel panel-default"> 	
+        <div class="panel-body">
+          <textarea class="form-control" [(ngModel)]="title" name="title" placeholder="What are you up to?" class="status"></textarea>           
+            <div class="btn-group">
+              <button type="button" class="btn btn-link btn-icon statusbtn"><i class="fa fa-user-plus"></i> Activity</button>
+              <button type="button" class="btn btn-link btn-icon statusbtn"><i class="fa fa-video-camera"></i> Video</button>
+              <button type="button" class="btn btn-link btn-icon statusbtn"><i class="fa fa-map-marker"></i> Location</button>
+              <button type="button" class="btn btn-link btn-icon statusbtn"><i class="fa fa-camera"></i> Photo</button>
+              <button type="button" class="btn btn-link btn-icon statusbtn"><i class="fa fa-calendar"></i> event</button>
+            </div>
+              <!-- <input type="button" class="btn  pull-right post" value="post"> -->
+          </div>
+     </div>
+    </div>
+</form>
+<div class="status">
+    <div *ngFor="let post of posts">
+      <div class="col-md-1">  
+        <input type="checkbox" class="checkbox">
+      </div>
+      <div class="col-md-7">
+        {{post.title}}
+      </div>
+      <div class="col-md-4">
+        <input type="button" value="delete" class="btn btn-danger">
+      </div>
+    </div>
+</div>
+

@@ -1,0 +1,58 @@
+<div class="main-profile">
+  <div class="profile-wrapper">
+    <div class="profile-image">
+      <div class="avatar-upload">
+              <div class="avatar-edit">
+                  <input type='file' #imageupload id="imageUpload" accept=".png, .jpg, .jpeg"   (change)="readURL($event, imageupload.files)"/>
+                  <label for="imageUpload"></label>
+              </div>
+              
+              <div class="avatar-preview">
+          <div id="imagePreview" *ngIf="hide==true"  
+          [ngStyle]="{'background-image': 'url('+updateCredentials.image+')'}"
+          >
+                  <i [ngStyle]="{'display': hide==true?'none':'inline'}" class=
+                  "fas fa-camera-retro"></i>
+                  <!-- <img [src]="imageurl" alt=""> -->
+                  </div>
+              </div>
+          </div>
+    </div>
+    <!-- <div class="close"></div> -->
+    <h2 class="profile-title">{{name}} <span></span></h2>
+    <div class="profile-info">
+      <div class="content">
+        <h3>About <i class="fas fa-pencil-alt fas1" (click)="editaboutme()" [ngStyle]="{'display':edit === true?'none':'inline'}"></i></h3>
+        <!-- <p>#Graphic / #Web #Designer & #frontend #developer fuelled by coffee. Longtime lover of skiing and mountain living. Occasional blogger.</p>
+         -->
+        
+             
+          <textarea id="aboutme" #enter (keydown)="onKeydown($event,enter)" [(ngModel)]="updateAboutme.aboutme" [ngStyle]="{'display':makeVisible === true?'none':'inline'}"></textarea>  
+        <!-- <button  (click)="testVariable()" class="btn2" [ngStyle]="{'display':makeVisible === true?'none':'inline'}">Submit</button> <br /> -->
+          <span id="spanResult" [innerHtml]="updateAboutme.aboutme" [ngStyle]="{'display':makeVisible === false?'none':'inline'}" >
+  
+        </span>
+  
+        
+        <!-- <p class="link"><i class="fa fa-globe" aria-hidden="true"></i>United Kingdom</p> -->
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <span class="number">482</span> Followers
+        </div>
+        <div class="stat">
+          <span class="number">1,061</span> Following
+        </div>
+        <!-- <div class="stat">
+          <span class="number">15</span> Ski trips
+        </div> -->
+      </div>
+      <div class="arrow one"></div>
+      <div class="arrow two"></div>
+    </div>
+  </div>
+</div>
+
+<app-featured-work [data]="work_image"></app-featured-work>
+
+<app-post-update></app-post-update>

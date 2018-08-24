@@ -12,8 +12,26 @@ export interface UserDetails {
   iat: number;
 }
 
+export interface work {
+  image: string;
+  image_type: string;
+  imagelength: Number;
+  _id: string;
+}
+
 interface TokenResponse {
   token: string;
+}
+
+export interface TokenUpdate {
+  image: string;
+  image_type: String;
+  _id: string;
+}
+
+export interface TokenRevised {
+ aboutme: String;
+ _id: string;     
 }
 
 export interface TokenPayload {
@@ -86,7 +104,8 @@ export class AuthenticationService {
     }
   }
 
-  private request(method: 'post'|'get', type: 'login'|'register'|'profile'|'cart'|'product', user?: TokenPayload): Observable<any> {
+  private request(method: 'post'|'get', type: 'login'|'register'|'profile'|'cart'|'product'|'profileupdate'|'workupdate', user?: TokenPayload): Observable<any> {
+    
     let base;
     if (method === 'post') {
       base = this.http.post(`/api/${type}`, user);
@@ -163,6 +182,14 @@ export class AuthenticationService {
     return this.request('get', 'product');
   }
   
+  public updateProfile(profile): Observable<any> {
+
+    return this.request('post','profileupdate',profile);
+  }
+
+  public updatework(work): Observable<any> {
+    return this.request('post','workupdate',work);
+  }
 
 
 }

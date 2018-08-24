@@ -3,6 +3,14 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import {
+  MatCommonModule,
+  MatIconModule,
+  MatSlideToggleModule,
+  MatToolbarModule,
+  MatButtonModule
+} from '@angular/material';
+
 
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -19,6 +27,11 @@ import { CartStateComponent } from './cartstate/cart-state.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { CartServiceComponent } from './cart-service/cart-service.component';
 import { NumberDirective } from './directive/number.directive';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { PostUpdateComponent } from './post-update/post-update.component';
+import { FeaturedWorkComponent } from './featured-work/featured-work.component';
+import { DragScrollModule } from '../';
+// import { FlexLayoutModule } from '@angular/flex-layout';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -31,7 +44,8 @@ const routes: Routes = [
   { path: 'cart-service', component: CartServiceComponent},
   { path: 'cart-state', component: CartStateComponent},
   { path: 'shopping-list', component: ShoppingListComponent },
-  { path: 'payments', component: PaymentsComponent }
+  { path: 'payments', component: PaymentsComponent },
+  { path: 'userprofile', component: UserProfileComponent, canActivate: [AuthGuardService]}
 ];
 
 @NgModule({
@@ -49,12 +63,27 @@ const routes: Routes = [
     ShoppingListComponent,
     CartServiceComponent,
     NumberDirective,
+    UserProfileComponent,
+    PostUpdateComponent,
+    FeaturedWorkComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    DragScrollModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
+    // AppRoutingModule,
+    // DragScrollModule,
+    // BrowserModule,
+    // FormsModule,
+    // HttpClientModule,
+    MatCommonModule,
+    MatIconModule,
+    MatSlideToggleModule,
+    MatToolbarModule,
+    MatButtonModule,
+    // FlexLayoutModule,
   ],
   providers: [
     AuthenticationService, 

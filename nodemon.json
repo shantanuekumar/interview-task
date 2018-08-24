@@ -1,4 +1,5 @@
 {
   "verbose": true,
-  "ignore": ["public/*", "app_client/*"]
+  "ignore": ["public/*", "app_client/*","assets/*"]
+
 }

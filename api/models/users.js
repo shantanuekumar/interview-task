@@ -2,6 +2,12 @@ var mongoose = require( 'mongoose' );
 var crypto = require('crypto');
 var jwt = require('jsonwebtoken');
 
+var workimage = new mongoose.Schema({
+  image:{
+    type: String,
+  }
+});
+
 var userSchema = new mongoose.Schema({
   email: {
     type: String,
@@ -26,6 +32,17 @@ var userSchema = new mongoose.Schema({
     unique: true,
     required:true
   },
+  aboutme: {
+    type: String,    
+  },
+  image_name: {
+    type: String,
+  },
+  work_img: [],
+  
+  // {type : Array , "default" : []},
+    
+  
 
   hash: String,
   salt: String

@@ -25,6 +25,8 @@ var cors = require('cors');
 // [SH] Require Passport
 var passport = require('passport');
 
+
+
 // [SH] Bring in the data model
 require('./api/models/db');
 // [SH] Bring in the Passport config after model is defined
@@ -34,6 +36,10 @@ require('./api/config/passport');
 // [SH] Bring in the routes for the API (delete the default routes)
 var routesApi = require('./api/routes/index');
 var app = express();
+
+app.use(bodyParser.json({limit: '10mb'})); //limit by default is 80kb so to parse image of more size we set limit to a value 
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
 // app.use(session({
 //     secret: 'secret session key',
@@ -82,13 +88,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
-// app.use(express.static('/home/shantanu/Pictures'));
 
 // [SH] Initialise Passport before using the route middleware
 app.use(passport.initialize());
 
 // [SH] Use the API routes when path starts with /api
 app.use('/api', routesApi);
+
+app.use('/profileimage',express.static(path.join(__dirname,'/api/public')));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

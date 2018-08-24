@@ -66,7 +66,7 @@ export class HomeComponent {
 	signin(){
 
 		this.auth.login(this.loginCredentials).subscribe(() => {
-      this.router.navigateByUrl('/profile');
+      this.router.navigateByUrl('/userprofile');
     }, (err) => {
       console.error(err);
     }); 
@@ -74,7 +74,7 @@ export class HomeComponent {
 
 	register(){
 		this.auth.register(this.registerCredentials).subscribe(() => {
-      this.router.navigateByUrl('/profile');
+			this.router.navigateByUrl('/userprofile');
     }, (err) => {
       console.error(err);
     });

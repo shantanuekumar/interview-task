@@ -15,6 +15,8 @@ var ctrlCart = require('../controllers/cart');
 
 // profile
 router.get('/profile', auth, ctrlProfile.profileRead);
+router.post('/profileupdate', ctrlProfile.profileUpdate);
+router.post('/workupdate',ctrlProfile.workUpdate);
 
 // authentication
 router.post('/register', ctrlAuth.register);

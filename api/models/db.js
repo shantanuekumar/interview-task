@@ -51,3 +51,5 @@ require('./users');
 require('./products');
 
 require('./cartProducts');
+
+require('./userPost');
