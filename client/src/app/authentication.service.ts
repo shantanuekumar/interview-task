@@ -29,6 +29,15 @@ export interface TokenUpdate {
   _id: string;
 }
 
+export interface UpdatePost {
+  video : String;
+  videoType: String;
+  image: String;
+  imageType: String;
+  currentLat: any;
+  currentLong: any;
+}
+
 export interface TokenRevised {
  aboutme: String;
  _id: string;     

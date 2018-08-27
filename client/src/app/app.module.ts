@@ -8,8 +8,15 @@ import {
   MatIconModule,
   MatSlideToggleModule,
   MatToolbarModule,
-  MatButtonModule
+  MatButtonModule,
+  MatCardModule,
+  
+  
+
 } from '@angular/material';
+
+import {MatDialogModule} from '@angular/material';
+
 
 
 import { AppComponent } from './app.component';
@@ -31,7 +38,6 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { PostUpdateComponent } from './post-update/post-update.component';
 import { FeaturedWorkComponent } from './featured-work/featured-work.component';
 import { DragScrollModule } from '../';
-// import { FlexLayoutModule } from '@angular/flex-layout';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -73,22 +79,22 @@ const routes: Routes = [
     DragScrollModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    // AppRoutingModule,
-    // DragScrollModule,
-    // BrowserModule,
-    // FormsModule,
-    // HttpClientModule,
     MatCommonModule,
     MatIconModule,
     MatSlideToggleModule,
     MatToolbarModule,
     MatButtonModule,
-    // FlexLayoutModule,
+    MatCardModule,
+    MatDialogModule
+  ],
+  entryComponents: [
+    PostUpdateComponent
   ],
   providers: [
     AuthenticationService, 
     AuthGuardService,
     CartServiceComponent
+   
   ],
   bootstrap: [AppComponent]
 })
