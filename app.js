@@ -7,14 +7,6 @@
 
 var express = require('express');
 const session = require('express-session');
-// const MongoDBStore = require('connect-mongodb-session')(session);
-// const store =   new MongoDBStore({
-//     uri: 'mongodb://localhost/meanAuth',
-//     collection: 'sessions'
-// });
-
-const Products = require('./api/models/products');
-
 
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -24,6 +16,7 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 // [SH] Require Passport
 var passport = require('passport');
+
 
 
 
@@ -37,57 +30,22 @@ require('./api/config/passport');
 var routesApi = require('./api/routes/index');
 var app = express();
 
+
 app.use(bodyParser.json({limit: '10mb'})); //limit by default is 80kb so to parse image of more size we set limit to a value 
-app.use(bodyParser.urlencoded({ extended: false }));
-
-
-// app.use(session({
-//     secret: 'secret session key',
-//     resave: false,
-//     saveUninitialized: true,
-//     store: store,
-//     unset: 'destroy',
-//     name: 'session cookie name'
-// }));
-
-// app.get('/', (req, res) => {
-//     if(!req.session.test) {
-//       req.session.test = 'OK';
-//       res.send('OK');
-//     }
-//   });
-  
-//   app.get('/test', (req, res) => {
-//     res.send(req.session.test); // 'OK'
-//   });
-
-//   const Security = require('./api/lib/security');
-// //...
-//     app.post('/test', (req, res) => {
-//         let token = req.body.nonce;
-//         if(Security.isValidNonce(token, req)) {
-//         // OK
-//         } else {
-//         // Reject the request
-//         }
-//     });
+app.use(bodyParser.urlencoded({limit: '10mb', extended: false }));
 
 
 
-
-
-
-// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
+
+
 
 // [SH] Initialise Passport before using the route middleware
 app.use(passport.initialize());
@@ -96,6 +54,12 @@ app.use(passport.initialize());
 app.use('/api', routesApi);
 
 app.use('/profileimage',express.static(path.join(__dirname,'/api/public')));
+
+app.use(function(req,res,next) {
+    res.header("Access-Control-Allow-Origin","*");
+    res.header("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

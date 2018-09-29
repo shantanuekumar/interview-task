@@ -1,30 +1,17 @@
 var express = require('express');
 var router = express.Router();
 var jwt = require('express-jwt');
+const uid = require('uuid/v1');
 var auth = jwt({
   secret: 'MY_SECRET',
   userProperty: 'payload'
 });
 
 
+var ctrlStore = require('../controllers/storeData');
 
-var ctrlProfile = require('../controllers/profile');
-var ctrlAuth = require('../controllers/authentication');
-var ctrlProduct = require('../controllers/fetch_products');
-var ctrlCart = require('../controllers/cart');
-
-// profile
-router.get('/profile', auth, ctrlProfile.profileRead);
-router.post('/profileupdate', ctrlProfile.profileUpdate);
-router.post('/workupdate',ctrlProfile.workUpdate);
-
-// authentication
-router.post('/register', ctrlAuth.register);
-router.post('/login', ctrlAuth.login);
-
-// products
-router.get('/product', ctrlProduct.fetch_products);
-router.post('/cart', ctrlCart.updateCart);
-router.get('/cart', auth , ctrlCart.getCart);
+router.post('/pushData',ctrlStore.store);
   
 module.exports = router;
+
+
